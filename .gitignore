@@ -1,0 +1,18 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/spec/tmp/
+/spec/examples.txt
+/tmp/
+
+# personal rspec configs
+.rspec-local
+
+# personal ruby evironment configs
+.ruby-version
+.ruby-gemset

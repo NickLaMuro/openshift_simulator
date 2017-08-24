@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+#
+sub_cmd = ARGV.shift
+sub_cmd_lib = File.expand_path File.join('..', 'lib', 'openshift_simulator', 'commands'),
+                               File.dirname(__FILE__)
+require "optparse"
+
+case sub_cmd
+when "capture"
+  require "#{sub_cmd_lib}/capture"
+
+  OpenshiftSimulator::Commands::Capture.run ARGV
+when /^server?$/  # accept 'serve' or 'server'
+  require "#{sub_cmd_lib}/server"
+
+  OpenshiftSimulator::Commands::Server.run ARGV
+else
+  require "#{sub_cmd_lib}/help"
+
+  OpenshiftSimulator::Commands.help
+end
