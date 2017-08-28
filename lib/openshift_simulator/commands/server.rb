@@ -1,5 +1,7 @@
 begin
   require "rack"
+  require 'webrick'
+  require 'webrick/https'
 
   module OpenshiftSimulator
     module Commands

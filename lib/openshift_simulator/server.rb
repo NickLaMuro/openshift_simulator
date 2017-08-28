@@ -16,8 +16,10 @@ module OpenshiftSimulator
     end
 
     def start
-      Rack::Server.start :app  => build_rack_app,
-                         :Port => @port
+      Rack::Server.start :app             => build_rack_app,
+                         :Port            => @port,
+                         :SSLEnable       => true,
+                         :SSLCertName     => [["CN", WEBrick::Utils::getservername]]
     end
 
     private
