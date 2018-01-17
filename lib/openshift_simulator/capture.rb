@@ -58,6 +58,9 @@ module OpenshiftSimulator
           user, pass = [@options[:user], @options[:pass]]
           headers["authorization"] = BasicAuthEncorder.encode user, pass
         end
+        # simulate rest-client/kubclient
+        # TODO:  Make this configurable?
+        headers["accept-encoding"] = "gzip, deflate"
       end
     end
 
